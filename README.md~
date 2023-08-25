@@ -1,0 +1,17 @@
+# Top-K-elementos
+---
+
+É muito commum em situações de análise de dados ter que encontrar a parte mais significativa ou valiosa de uma grande massa de dados, isso é, identificar os elemontos mais valiosos dentre diversos menos releventes. A partir desse processo, pode-se partir para análise de dados e retirar conclusoes valiosas a respeito dos dados que não seria possível se fazer a mão devido ao tamanho da massa de dados.
+
+Esse projeto fornece uma solução para tal problema utilizando uma tabela hash e estrutura heap para análise de palavras em textos. O intuito é descobrir qual são os "top k elementos" na massa de dados, isto é, qual elementos se repetem (aparecem mais vezes) mais dentro os demais.
+
+Utilizando a tabela hash e estrutura heap podemos apresentar uma solução eficiente computacionalmente para esse problema. O que torna o processo escalável à relativamente grandes massas de dados mesmo em dispositivos modestos.
+
+Em suma, esse trabalho realiza a leitura e análise de diferentes textos fornecidos pelo usuário e retorna qual foram os top k elementos mais frenquentes nos textos fornecidos. O valor de k é considerado como 20 por definição.
+
+## Formatação da entrada
+
+- O programa recebe um arquivo com conteudo de texto onde cada sentença deve terminar com sinal de pontuação ex: ".","?","!".
+- Cada parágrafo é separado por uma linha em branco
+- Uma palavra é definida como uma sequência de letras delimitadas (pela frente e trás) por espaço ou sinal de pontuação
+- 
