@@ -22,21 +22,21 @@ Em suma, esse trabalho realiza a leitura e análise de diferentes textos forneci
 Primeiro é criado a hash contento todas as palavras nos textos, cada vez que uma palavra é encontrada, ela tem sua frenquência na hash aumentada. Para achar palavras foi realizada a leitura de cada byte do arquivo por vez, assim cada byte entre uma marca de terminação e outra é considerado parte de uma palavra.
 
 Aas marcas de terminação usadas são: 
-- espaço; "!"; "?"; "."; nova linha;
-- ",""; "("; ")"; ";"; "/"; 
-- ":"; "—"; '"'; "\";
+- espaço; nova linha; ```!```; ```?```; ```.```;
+- ```,```; ```(```; ```)```; ```;```; ```/```; 
+- ```:```; ```—```; ```"```; ```\```;
 
 Assim a contagem dos elementos é feita em O(n), onde n representa o número de palavras. É importante notar que todas as palavras contidas no arquivo "stopwords.txt" serão disconsideradas pelo programa e não serão adicionadas à hash.
 
 Foi-se utilizado também a condificação UTF-8 fornecida pelas bibliotecas do C++. Além disso, o programa não diferencia entre palavras com letras minúsculas e maiúsculas, assim, "CÓDIGO" e "código" são consideradas palavras iguais. O programa considera acento nas palavras, sendo assim, "código" e "codigo" são consideradas diferentes.
 
-A hash utilizada foi o "unordered_map" do C++ TODO: Descrever como ele funciona e função hash
+A hash utilizada foi o "unordered_map" do C++, uma classe que utiliza uma tabela hash para armarzenar valores de chave e valor passados via template. O uso da tabela hash possibilita que o custo de acesso de um valor (no nosso caso será a frequência) através da chave (a palavra) seja de custo aproximadamente constante O(1). A função hash utilizada não é definida pela especificação da linguagem, então depende do compilador. No caso do g++, o compilador utilizado nesse projeto, a função hash utilizada é na versão 11 é "MurmurHashUnaligned2" que utiliza diversas operação bit a bit para obter o valor da hash.
 
 Depois se cria o heap de tamanho k (20), o heap é inicializado com os primeiros valores da hash e após isso ele será atualizado conforme for pertinente.
 
 A atualização do heap é feita compararando cada palavra restante da hash com o menor valor do heap, isto é, a palavra com menor frequência. Se a contagem for maior do que o menor valor da heap, o elemento do heap é removido, e o novo elemento é inserido no heap. A cada elemento inserido o "heapify" é utilizado, mantendo a estrutura heap correta.
 
-São utilizadas as funções "make_heap", "push_heap" e "pop_heap" para tal. "make_heap" inicializa o heap no vetor, "push_heap" é usado quando a palavra é adicionadae "pop_heap" quando a palavra é removida. Tais funções possuem o custom O(log n), onde n é a quantidade de items inseridos.
+São utilizadas as funções "make_heap", "push_heap" e "pop_heap" para tal. "make_heap" inicializa o heap no vetor, "push_heap" é usado quando a palavra é adicionadae "pop_heap" quando a palavra é removida. Tais funções possuem o custom $\Omega(\log{n})$, onde n é a quantidade de items inseridos e cada operação é uma comparação.
 
 Assim, as lista dos k maiores é criado de acordo com a tabela toda. Após toda a tabela ser processada, o heap final é imprimido na tela.
 
