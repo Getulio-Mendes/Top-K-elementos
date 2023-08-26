@@ -20,7 +20,7 @@ void printHeap(vector<Word> heap){
   cout << "\n-------- Heap final: --------" << endl;
   
   // Percorre o heap e printa os valores
-  for (int i = 0; i < heap.size(); i++){
+  for (long unsigned int i = 0; i < heap.size(); i++){
     cout << to_string(i) +": " <<
     converter.to_bytes(heap[i].getContent()) <<" -> " << 
     heap[i].getFrequence() << endl;

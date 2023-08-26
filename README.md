@@ -62,6 +62,17 @@ Tendo em vista o escopo do trabalho, foi optado utilizar esse método devido aos
 
 O arquivo de stopwords foi lido de forma sequêncial devido ao seu tamanho pequeno o que torna a diferença de performance obtida ao otmizar o processo quase insignificante em comparação aos arquivos de entrada.
 
+## Resultados
+
+### Exemplo de entrada
+
+![entrada1](/img/entrada.png)
+![entrada2](/img/entrada2.png)
+
+### Exemplo de saída
+
+![saída](/img/saída.png)
+
 ## Conclusão
 
 A implementação realizada oferece um exemplo concreto da aplicação das estruturas hash e heap de modo prático. Essa solução, apesar de rudmentar e feita por propósitos educativos, permite extrair informações significativas de vastos conjuntos de dados de modo otimizado.
