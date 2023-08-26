@@ -67,6 +67,9 @@ O arquivo de stopwords foi lido de forma sequêncial devido ao seu tamanho peque
 ### Exemplo de entrada
 
 ![entrada1](/img/entrada.png)
+
+Segundo arquivo:
+
 ![entrada2](/img/entrada2.png)
 
 ### Exemplo de saída
